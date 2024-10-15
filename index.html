@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      document.write("<h1>question1</h1>")
+        // question:1
+        // Calculate total price of each item and all items
+
+        var itemsArray = [
+  { name: "juice", price: 50, quantity: 3 },
+  { name: "cookie", price: 30, quantity: 9 },
+  { name: "shirt", price: 880, quantity: 1 },
+  { name: "pen", price: 100, quantity: 2 }
+];
+
+var total = 0;
+
+itemsArray.forEach(item => {
+  var itemTotal = item.price * item.quantity;
+  console.log(`Total price of ${item.name}: ${itemTotal}`);
+  total += itemTotal;
+});
+
+console.log("Total price of all items:", total);
+document.write("Total price of all items:", total+"<br>");
+
+// question:2
+document.write("<h1>other questions are on console </h1>")
+var person = {
+  name: "John",
+  email: "john@example.com",
+  password: "1234",
+  age: 25,
+  gender: "male",
+  city: "New York",
+  country: "USA"
+};
+
+// Check if specific properties exist
+console.log("age" in person); // true
+console.log("country" in person); // true
+console.log("firstName" in person); // false
+console.log("lastName" in person); // false
+
+
+// question:3
+
+function Book(title, author, year, genre, isAvailable) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+  this.genre = genre;
+  this.isAvailable = isAvailable;
+}
+// question no:3
+// Constructor Function to Create Multiple Records
+// Creating book records using the constructor
+var book1 = new Book("To Kill a Mockingbird", "Harper Lee", 1960, "Fiction", true);
+var book2 = new Book("1984", "George Orwell", 1949, "Dystopian", false);
+var book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, "Classic", true);
+
+console.log(book1);
+console.log(book2);
+console.log(book3);
+
+
+
+// question no:4
+function PopulationRecord(name, gender, address, education, profession) {
+  this.name = name;
+  this.gender = gender;
+  this.address = address;
+  this.education = education;
+  this.profession = profession;
+}
+
+// Add records one by one and save to localStorage (example for a single record)
+var record = new PopulationRecord("Charlie", "male", "123 Street, City", "Bachelor's", "Engineer");
+
+// Save to localStorage (as an example)
+localStorage.setItem("populationRecord", JSON.stringify(record));
+
+// Retrieve from localStorage
+var savedRecord = JSON.parse(localStorage.getItem("populationRecord"));
+console.log(savedRecord);
+
+    </script>
+</body>
+</html>
